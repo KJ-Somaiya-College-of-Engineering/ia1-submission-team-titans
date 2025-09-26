@@ -1,0 +1,74 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #0a192f, #112d4e); /* dark aurora blue gradient */
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 6px 20px rgba(0, 136, 255, 0.35); /* glowing blue shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Logo styling */
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.08);
+  color: #38bdf8; /* icy aurora blue */
+}
+
+/* Spacer keeps middle empty */
+.navbar-spacer {
+  flex: 1;
+}
+
+/* Actions (buttons) */
+.navbar-actions {
+  display: flex;
+  gap: 18px;
+}
+
+/* Base button style */
+.nav-btn {
+  padding: 9px 20px;
+  border: none;
+  border-radius: 30px;
+  background: #1e40af; /* deep cool blue */
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 3px 8px rgba(30, 64, 175, 0.4);
+}
+
+.nav-btn:hover {
+  background: #2563eb; /* brighter aurora blue */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.45);
+}
+
+/* Special style for Sign Up */
+.signup-btn {
+  background: transparent;
+  color: #38bdf8;
+  border: 2px solid #38bdf8;
+  box-shadow: none;
+}
+
+.signup-btn:hover {
+  background: #38bdf8;
+  color: #0a192f;
+  box-shadow: 0 6px 16px rgba(56, 189, 248, 0.55);
+}
