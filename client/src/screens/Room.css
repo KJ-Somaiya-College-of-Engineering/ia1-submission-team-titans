@@ -1,104 +1,144 @@
-/* Full page */
+/* ================= FULL PAGE ================= */
 .room-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: #0f172a; /* aurora dark */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* no scrollbars */
+}
+
+/* ================= VIDEO GRID ================= */
+.video-grid {
+  position: absolute;
+  top: 64px;   /* assume navbar height */
+  bottom: 60px; /* above call bar */
+  left: 0;
+  right: 0;
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  place-items: center;
+  transition: all 0.3s ease;
+  overflow: hidden; /* prevent scrolling */
+}
+
+.video-grid.single {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #4f46e5, #9333ea);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Card */
-.room-card {
-  background: #ffffff;
-  padding: 2rem 2.5rem;
+.video-box {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1e293b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.video-box.full {
+  width: 100%;
+  height: 100%;
+}
+
+.video-box.small {
+  position: absolute;
+  bottom: 72px; /* sits just above call bar */
+  left: 20px;
+  width: 220px;
+  height: 150px;
   border-radius: 12px;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
-  width: 420px;
-  text-align: center;
-  animation: fadeIn 0.6s ease-in-out;
+  z-index: 10;
 }
 
-/* Title */
-.room-title {
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+.video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
 
-/* Connection status */
-.room-status {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: #555;
-}
-
-/* Buttons */
-.room-actions {
+.video-off-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #1e293b;
+  color: #fff;
+  font-size: 1.2rem;
   display: flex;
   justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  align-items: center;
 }
 
-.room-btn {
-  padding: 0.7rem 1.2rem;
-  background: #4f46e5;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.25s ease, transform 0.15s ease;
-}
-
-.room-btn:hover {
-  background: #4338ca;
-  transform: translateY(-2px);
-}
-
-.room-btn:active {
-  transform: scale(0.97);
-}
-
-.call-btn {
-  background: #16a34a;
-}
-
-.call-btn:hover {
-  background: #15803d;
-}
-
-/* Streams grid */
-.streams {
+/* ================= CALL BAR ================= */
+.call-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(15, 23, 42, 0.95);
   display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-  margin-top: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 -4px 20px rgba(0, 136, 255, 0.3);
+  z-index: 100;
 }
 
-/* Stream box */
-.stream-box {
+.call-bar-center {
+  display: flex;
+  gap: 16px;
+}
+
+.call-bar-right {
+  position: absolute;
+  right: 20px;
+}
+
+/* ================= CALL BAR BUTTONS ================= */
+.call-btn {
+  padding: 8px 16px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.call-btn.mic-btn,
+.call-btn.video-btn {
   background: #f9fafb;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: #0f172a;
 }
 
-.stream-box h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+.call-btn.end-btn {
+  background: #ef4444;
+  color: white;
 }
 
-/* Video */
-.video-player {
-  border-radius: 8px;
-  overflow: hidden;
+.call-btn.people-btn {
+  background: #2563eb;
+  color: white;
 }
 
-/* Fade-in animation */
+.call-btn.off {
+  background: #6b7280;
+  color: white;
+}
+
+/* ================= HOVER EFFECTS ================= */
+.call-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(56, 189, 248, 0.5);
+}
+
+.call-btn.end-btn:hover {
+  background: #b91c1c;
+  box-shadow: 0 6px 14px rgba(220, 38, 38, 0.5);
+}
+
+/* ================= ANIMATIONS ================= */
 @keyframes fadeIn {
   from {
     opacity: 0;
