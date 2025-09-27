@@ -2,6 +2,7 @@ import React, { useEffect, useCallback, useState } from "react";
 import ReactPlayer from "react-player";
 import peer from "../service/peer";
 import { useSocket } from "../context/SocketProvider";
+import "./Room.css";
 
 const RoomPage = () => {
   const socket = useSocket();
@@ -46,7 +47,7 @@ const RoomPage = () => {
   }, [myStream]);
 
   const handleCallAccepted = useCallback(
-    ({ from, ans }) => {
+    ({ ans }) => {
       peer.setLocalDescription(ans);
       console.log("Call Accepted!");
       sendStreams();
@@ -110,35 +111,39 @@ const RoomPage = () => {
   ]);
 
   return (
-    <div>
-      <h1>Room Page</h1>
-      <h4>{remoteSocketId ? "Connected" : "No one in room"}</h4>
-      {myStream && <button onClick={sendStreams}>Send Stream</button>}
-      {remoteSocketId && <button onClick={handleCallUser}>CALL</button>}
-      {myStream && (
-        <>
-          <h1>My Stream</h1>
-          <ReactPlayer
-            playing
-            muted
-            height="100px"
-            width="200px"
-            url={myStream}
-          />
-        </>
-      )}
-      {remoteStream && (
-        <>
-          <h1>Remote Stream</h1>
-          <ReactPlayer
-            playing
-            muted
-            height="100px"
-            width="200px"
-            url={remoteStream}
-          />
-        </>
-      )}
+    <div className="room-container">
+      <h1 className="room-title">Room</h1>
+      <h4 className="status-text">
+        {remoteSocketId ? "Connected" : "Waiting for others to join..."}
+      </h4>
+
+      <div className="video-grid">
+        {myStream && (
+          <div className="video-card">
+            <h2>Me</h2>
+            <ReactPlayer playing muted height="200px" width="100%" url={myStream} />
+          </div>
+        )}
+        {remoteStream && (
+          <div className="video-card">
+            <h2>Remote</h2>
+            <ReactPlayer playing height="200px" width="100%" url={remoteStream} />
+          </div>
+        )}
+      </div>
+
+      <div className="control-bar">
+        {myStream && (
+          <button className="btn" onClick={sendStreams}>
+            Send Stream
+          </button>
+        )}
+        {remoteSocketId && (
+          <button className="btn" onClick={handleCallUser}>
+            Call
+          </button>
+        )}
+      </div>
     </div>
   );
 };

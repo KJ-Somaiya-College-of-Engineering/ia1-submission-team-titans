@@ -1,0 +1,113 @@
+.room-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.room-title {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.status-text {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.video-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.video-card h2 {
+  margin-bottom: 10px;
+}
+
+.control-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  background: #1e3a8a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.08);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .room-title {
+    font-size: 26px;
+  }
+
+  .status-text {
+    font-size: 16px;
+  }
+
+  .video-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-card {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .btn {
+    padding: 14px 24px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .room-title {
+    font-size: 22px;
+  }
+
+  .status-text {
+    font-size: 14px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px;
+  }
+}
