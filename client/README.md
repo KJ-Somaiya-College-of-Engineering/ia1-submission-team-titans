@@ -70,4 +70,3 @@ Add screenshots of lobby page, room page, and video call UI here.
 
 Team Titans – KJ Somaiya College of Engineering
 
-sample text
