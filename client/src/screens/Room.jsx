@@ -7,7 +7,7 @@ import video_off_img from "../images/video-off-img.png";
 
 // Adjust to match the actual fixed navbar height and desired margins
 const NAVBAR_HEIGHT = 64; // px
-const GRID_MARGIN = 16;   // px
+const CALLBAR_HEIGHT = 60; // px
 
 const configuration = {
   iceServers: [
@@ -243,7 +243,7 @@ const RoomPage = () => {
   // CSS variables for layout sizing
   const cssVars = {
     "--navbar-height": `${NAVBAR_HEIGHT}px`,
-    "--grid-margin": `${GRID_MARGIN}px`,
+    "--callbar-height": `${CALLBAR_HEIGHT}px`,
   };
 
   return (

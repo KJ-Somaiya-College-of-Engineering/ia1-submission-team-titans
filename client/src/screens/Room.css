@@ -1,40 +1,48 @@
 /* ================= FULL PAGE ================= */
-.room-container {
+.room-root {
   position: relative;
   height: 100vh;
   width: 100vw;
-  background: #0f172a; /* aurora dark */
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  overflow: hidden; /* no scrollbars */
+  overflow: hidden;
 }
 
 /* ================= VIDEO GRID ================= */
 .video-grid {
   position: absolute;
-  top: 64px;   /* assume navbar height */
-  bottom: 60px; /* above call bar */
-  left: 0;
-  right: 0;
+  top: var(--navbar-height);
+  left: 12px;
+  right: 12px;
+  bottom: var(--callbar-height);
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 12px;
   padding: 12px;
   place-items: center;
   transition: all 0.3s ease;
-  overflow: hidden; /* prevent scrolling */
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .video-grid.single {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: calc(100% - 24px);
+  height: calc(100vh - var(--navbar-height) - var(--callbar-height) - 24px);
 }
 
+/* ================= VIDEO BOX ================= */
 .video-box {
   position: relative;
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
   overflow: hidden;
   background: #1e293b;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
 }
 
 .video-box.full {
@@ -44,7 +52,7 @@
 
 .video-box.small {
   position: absolute;
-  bottom: 72px; /* sits just above call bar */
+  bottom: calc(var(--callbar-height) + 12px);
   left: 20px;
   width: 220px;
   height: 150px;
@@ -76,7 +84,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: var(--callbar-height);
   background: rgba(15, 23, 42, 0.95);
   display: flex;
   justify-content: center;

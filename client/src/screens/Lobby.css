@@ -1,9 +1,17 @@
-/* Full page center alignment */
+/* Full page center alignment and disable scrolling */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* prevent scrolling */
+}
+
 .lobby-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* full viewport height */
+  width: 100vw;  /* full viewport width */
   background: linear-gradient(135deg, #4f46e5, #9333ea);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -16,6 +24,7 @@
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
   width: 350px;
   text-align: center;
+  margin-top: -70px;
   animation: fadeIn 0.6s ease-in-out;
 }
 
