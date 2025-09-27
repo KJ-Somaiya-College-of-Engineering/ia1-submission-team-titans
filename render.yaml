@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: my-backend
+    env: node
+    rootDir: server
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    branch: main
+    autoDeploy: true
+    plan: free
+
+  - type: static
+    name: my-frontend
+    rootDir: client
+    buildCommand: "npm install && npm run build"
+    staticPublishPath: build
+    branch: main
+    autoDeploy: true
+    plan: free
