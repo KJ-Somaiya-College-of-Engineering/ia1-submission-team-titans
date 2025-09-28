@@ -66,7 +66,7 @@ Enter your email and room ID to join a room
 
 Share the room ID with others to start a group call
 
-## 📸 Screenshots (optional)
+## 📸 Screenshots 
 
 <img width="750" height="351" alt="image" src="https://github.com/user-attachments/assets/3a863800-c3ee-4a24-ab8a-88b4c83cba8b" />
 
