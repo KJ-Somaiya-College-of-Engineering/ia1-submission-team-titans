@@ -27,10 +27,10 @@ WebRTC API for peer-to-peer communication
 ## 📂 Project Structure
 
 /project-root
-│── /client       
-│── /server       
-│── package.json
-│── README.md
+  │── /client       
+  │── /server       
+  │── package.json
+  │── README.md
 
 ## ⚙️ Installation & Setup
 
