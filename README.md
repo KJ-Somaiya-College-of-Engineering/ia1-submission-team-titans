@@ -12,11 +12,12 @@ Varun Varun Bhonslay (16030725019)
 Zarwaan Shroff (16030725018)
 
 
-📺 Demo Video
+📺 Demo Video Drive Link
+https://drive.google.com/file/d/1cxpNTIanS-7HthDvSQtaEYmnJ9tJOB6T/view?usp=drive_link
 
 
-
-
+PPT Drive Link
+https://drive.google.com/file/d/1EPp83_J1Aj_rcLmZr0fsqN644U4uxU4Y/view?usp=drive_link
 
 
 ## 🚀 Features
