@@ -4,6 +4,21 @@
 LiveLink is a real-time video calling web application built using React.js, WebRTC, and Socket.IO.
 It allows multiple users to join a virtual room and communicate seamlessly via video and audio.
 
+
+👥 Team Members
+
+Shivam Choughule (16030725004)
+Varun Varun Bhonslay (16030725019)
+Zarwaan Shroff (16030725018)
+
+
+📺 Demo Video
+
+
+
+
+
+
 ## 🚀 Features
 
 🎥 Peer-to-peer video and audio calling
